@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88&#x2F;actk.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88&#x2F;type.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88&#x2F;save_actk.jpg">
-<meta property="og:updated_time" content="2019-11-01T03:45:46.804Z">
+<meta property="og:updated_time" content="2019-11-01T05:04:51.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88&#x2F;actk_top.jpg">
   
@@ -305,7 +305,7 @@
 <blockquote>
 <p>###进阶攻击：</p>
 <ul>
-<li>session劫持：<br>Session 的中文意思是会话，其实就是访问者从到达特定主页到离开的那段时间，在这个过程中，每个访问者都会得到一个单独的Session。Session是基于访问的进程，记录了一个访问的开始到结束，当浏览器或进程关闭之后，Session也就“消失”了。<br>在Session机制中，客户端和服务端通过标识符来识别用户身份和维持会话，但这个标识符也会有被其他人利用的可能。<br>Session和Cookie的最大区别在于：Session是保存在服务端的内存里面，而Cookie保存于浏览器或客户端文件里面。</li>
+<li>session劫持：<br>Session 的中文意思是会话，其实就是访问者从到达特定主页到离开的那段时间，在这个过程中，每个访问者都会得到一个单独的Session。Session是基于访问的进程，记录了一个访问的开始到结束，当浏览器或进程关闭之后，Session也就“消失”了。<br>在Session机制中，客户端和服务端通过标识符来识别用户身份和维持会话，但这个标识符也会有被其他人利用的可能。<br>Session和Cookie的最大区别在于：Session是保存在服务端的内存里面，而Cookie保存于浏览器或客户端文件里面。<br>我们之所以要了解Session机制，是因为它与XSS跨站脚本之间息息相关。所谓的“会话劫持”，其实就是指攻击者利用XSS劫持了用户的会话去执行某些恶意操作（或攻击），这些操作往往能达到提升权限的目的。<br>这里需要注意的是：会话概念一般是基于Cookie的，会话劫持的本质是在攻击中带上了Cookie并发送到服务端。<br>为了让大家深入理解会话劫持的原理，以及这种攻击的严重性，我们以一个实际例子来具体说明。</li>
 </ul>
 </blockquote>
 <blockquote>
