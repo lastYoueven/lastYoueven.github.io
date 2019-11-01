@@ -184,9 +184,9 @@
         <p> 什么是xss?</p>
 <blockquote>
 <ul>
-<li>开放式Web应用程序安全项目（Open Web Application Security Project，OWASP）是世界上最知名的Web安全与数据库安全研究组织，该组织分别在2007年和2010年统计过十大Web安全漏洞，如图下图所示：<br><img src="/.com//actk_top.jpg" alt="攻击排行榜">    </li>
+<li>开放式Web应用程序安全项目（Open Web Application Security Project，OWASP）是世界上最知名的Web安全与数据库安全研究组织，该组织分别在2007年和2010年统计过十大Web安全漏洞，如图下图所示：<br><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/actk_top.jpg" alt="攻击排行榜">    </li>
 <li>我们看到xss高居第二！    </li>
-<li>除此之外在我们生活中也能经常看到很被攻击的：<br><img src="/.com//qq_mail_actk.jpg" alt="被攻击的qq邮箱"><br><img src="/.com//goolge_actk.jpg" alt="被攻击的谷歌"></li>
+<li>除此之外在我们生活中也能经常看到很被攻击的：<br><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/qq_mail_actk.jpg" alt="被攻击的qq邮箱"><br><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/goolge_actk.jpg" alt="被攻击的谷歌"></li>
 </ul>
 </blockquote>
 <blockquote>
@@ -198,14 +198,14 @@
 <ul>
 <li>XSS跨站脚本攻击本身对Web服务器没有直接危害，它借助网站进行传播，使网站的大量用户受到攻击。攻击者一般通过留言、电子邮件或其他途径向受害者发送一个精心构造的恶意URL，当受害者在Web浏览器中打开该URL的时侯，恶意脚本会在受害者的计算机上悄悄执行，流程如图:</li>
 </ul>
-<p><img src="/.com//actk.jpg" alt="反射xss"><br>###主要类型：</p>
+<p><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/actk.jpg" alt="反射xss"><br>###主要类型：</p>
 <ul>
 <li>Reflected XSS（基于反射的XSS攻击）</li>
 <li>Stored XSS（基于存储的XSS攻击）</li>
 <li>DOM-based or local XSS（基于DOM或本地的XSS攻击）</li>
 </ul>
 <p><em>按照攻击方式来分</em>：    </p>
-<p><img src="/.com//type.png" alt="攻击方式分类"></p>
+<p><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/type.png" alt="攻击方式分类"></p>
 <hr>
 <p>###Reflected XSS（基于反射的XSS攻击）:</p>
 <ul>
@@ -221,7 +221,7 @@
 <ul>
 <li>持久型 XSS 一般出现在网站的留言、评论、博客日志等交互处，恶意脚本被存储到客户端或者服务器的数据库中，当其他用户浏览该网页时，站点即从数据库中读取恶意用户存入的非法数据，然后显示在页面中，即在受害者主机上的浏览器执行恶意代码。<br>如图：</li>
 </ul>
-<p><img src="/.com//save_actk.jpg" alt="持久xss攻击">。  </p>
+<p><img src="/2019/11/01/xss%E6%94%BB%E5%87%BB%E4%B8%8E%E9%98%B2%E5%AE%88/save_actk.jpg" alt="持久xss攻击">。  </p>
 <ul>
 <li>exp:   </li>
 <li>目标：<a href="http://43.247.91.228:81/vulnerabilities/xss_r/?" target="_blank" rel="noopener">简单的靶场</a><br>简单的持久攻击：<br><code>小姐姐&lt;/div&gt;&lt;button type=&quot;button&quot;&gt;&lt;a href=&quot;http://www.xiaozhu.com/&quot;&gt;小姐姐&lt;/a&gt;&lt;/button&gt;</code></li>
