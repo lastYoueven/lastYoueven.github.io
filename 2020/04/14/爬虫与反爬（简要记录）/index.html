@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>爬虫与反爬（简要记录） | aprilwind`bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常见爬虫与反爬简介（python小记）--- 答boss直聘招聘 #- 返回第n个fibonacci数  123456789def fibonacci_num(n: int) -&amp;gt; int:    &amp;quot;&amp;quot;&amp;quot;    返回第n个fibonacci数    &amp;quot;&amp;quot;&amp;quot;    a, b, c = 0, 1, 1    for i in range">
+  <meta name="description" content="常见爬虫与反爬简介（python小记）#- 常见的反爬取措施   反爬措施千奇百怪，五花八门，除了一些大厂的硬核各种加密身份验证加密还有各种脑回路新奇的歪门邪道。这里我们就看看最最常见的。       模拟请求 ###1，headers检查，  header检查也就是检查http请求中的headers数据，那么headers长什么样喃？下面我们以小猪短租(为什么是小猪短租喃？不要问，问就是帮老东家">
 <meta property="og:type" content="article">
 <meta property="og:title" content="爬虫与反爬（简要记录）">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;14&#x2F;%E7%88%AC%E8%99%AB%E4%B8%8E%E5%8F%8D%E7%88%AC%EF%BC%88%E7%AE%80%E8%A6%81%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;index.html">
 <meta property="og:site_name" content="aprilwind`bolg">
-<meta property="og:description" content="常见爬虫与反爬简介（python小记）--- 答boss直聘招聘 #- 返回第n个fibonacci数  123456789def fibonacci_num(n: int) -&amp;gt; int:    &amp;quot;&amp;quot;&amp;quot;    返回第n个fibonacci数    &amp;quot;&amp;quot;&amp;quot;    a, b, c = 0, 1, 1    for i in range">
+<meta property="og:description" content="常见爬虫与反爬简介（python小记）#- 常见的反爬取措施   反爬措施千奇百怪，五花八门，除了一些大厂的硬核各种加密身份验证加密还有各种脑回路新奇的歪门邪道。这里我们就看看最最常见的。       模拟请求 ###1，headers检查，  header检查也就是检查http请求中的headers数据，那么headers长什么样喃？下面我们以小猪短租(为什么是小猪短租喃？不要问，问就是帮老东家">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;14&#x2F;%E7%88%AC%E8%99%AB%E4%B8%8E%E5%8F%8D%E7%88%AC%EF%BC%88%E7%AE%80%E8%A6%81%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;1586773028678.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;14&#x2F;%E7%88%AC%E8%99%AB%E4%B8%8E%E5%8F%8D%E7%88%AC%EF%BC%88%E7%AE%80%E8%A6%81%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;IMG_0671.JPG">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;14&#x2F;%E7%88%AC%E8%99%AB%E4%B8%8E%E5%8F%8D%E7%88%AC%EF%BC%88%E7%AE%80%E8%A6%81%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;IMG_1912.JPG">
-<meta property="og:updated_time" content="2020-04-24T07:57:44.204Z">
+<meta property="og:updated_time" content="2020-04-24T08:00:06.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;14&#x2F;%E7%88%AC%E8%99%AB%E4%B8%8E%E5%8F%8D%E7%88%AC%EF%BC%88%E7%AE%80%E8%A6%81%E8%AE%B0%E5%BD%95%EF%BC%89&#x2F;1586773028678.jpg">
   
@@ -184,12 +184,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常见爬虫与反爬简介（python小记）"><a href="#常见爬虫与反爬简介（python小记）" class="headerlink" title="常见爬虫与反爬简介（python小记）"></a>常见爬虫与反爬简介（python小记）</h2><pre><code>--- 答boss直聘招聘</code></pre><blockquote>
-<p>#- 返回第n个fibonacci数</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def fibonacci_num(n: int) -&gt; int:</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    返回第n个fibonacci数</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    a, b, c = 0, 1, 1</span><br><span class="line">    for i in range(n):</span><br><span class="line">        a, b, c = b, c, a + b + c</span><br><span class="line">    return a</span><br><span class="line">print(f&quot;第150个fibonacci数是：&#123;fibonacci_num(150)&#125;&quot;)</span><br></pre></td></tr></table></figure>
-<p><a href="https://tech.io/snippet?l=python" target="_blank" rel="noopener">现线验证</a></p>
-<p>#- 常见的反爬取措施</p>
+        <h2 id="常见爬虫与反爬简介（python小记）"><a href="#常见爬虫与反爬简介（python小记）" class="headerlink" title="常见爬虫与反爬简介（python小记）"></a>常见爬虫与反爬简介（python小记）</h2><p>#- 常见的反爬取措施</p>
 <blockquote>
 <ul>
 <li>反爬措施千奇百怪，五花八门，除了一些大厂的硬核各种加密身份验证加密还有各种脑回路新奇的歪门邪道。这里我们就看看最最常见的。    </li>
